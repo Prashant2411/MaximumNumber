@@ -44,4 +44,25 @@ public class MaximumNumberTest {
         float max = maximumNumber.getMaximum(5.1f,1.1f,10.1f);
         Assert.assertEquals(10.1f,max,0.0);
     }
+
+    @Test
+    public void ifGivenThreeStringValues_withMaxAtFirstPosition_shouldReturnMax() {
+        MaximumNumber maximumNumber = new MaximumNumber();
+        String max = maximumNumber.getMaximum("Peach","Apple","Banana");
+        Assert.assertEquals("Peach",max);
+    }
+
+    @Test
+    public void ifGivenThreeStringValues_withMaxAtSecondPosition_shouldReturnMax() {
+        MaximumNumber maximumNumber = new MaximumNumber();
+        String max = maximumNumber.getMaximum("Apple","Peach","Banana");
+        Assert.assertEquals("Peach",max);
+    }
+
+    @Test
+    public void ifGivenThreeStringValues_withMaxAtThreePosition_shouldReturnMax() {
+        MaximumNumber maximumNumber = new MaximumNumber();
+        String max = maximumNumber.getMaximum("Apple","Banana","Peach");
+        Assert.assertEquals("Peach",max);
+    }
 }
