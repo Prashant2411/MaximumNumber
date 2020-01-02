@@ -1,28 +1,29 @@
 public class MaximumNumber < E extends Comparable> {
-    E a,b,c;
+    E[] a;
 
-    public MaximumNumber(E a, E b, E c) {
+    public MaximumNumber(E ...a) {
         this.a = a;
-        this.b = b;
-        this.c = c;
     }
 
     public MaximumNumber() {
     }
 
-    public < E extends Comparable > E getMaximum(E a, E b, E c) {
-        E max = a;
-        if (b.compareTo(max) > 0) {
-            max = b;
+    public < E extends Comparable > E getMaximum(E ...a) {
+        E max = a[1];
+        for (int i=0; i < a.length-1; i++) {
+            for (int j=0; j < a.length-i-1 ;j++) {
+                if (a[j].compareTo(a[j+1]) > 0) {
+                    E temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
         }
-        if (c.compareTo(max) > 0) {
-            max = c;
-        }
-        return max;
+        return a[2];
     }
 
     public E testMaximum() {
-        E max = getMaximum(a, b, c);
+        E max = getMaximum(a);
         return max;
     }
 }
