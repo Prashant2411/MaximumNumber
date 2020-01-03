@@ -12,16 +12,17 @@ public class MaximumNumber < E extends Comparable> {
 
     public < E extends Comparable > E getMaximum(E ...a) {
         Arrays.sort(a);
+        printMax(a[a.length-1]);
         return a[a.length-1];
     }
 
+
     public E testMaximum() {
         E max = getMaximum(a);
-        printMax(max);
         return max;
     }
 
-    private void printMax(E max) {
+    private <E> void printMax(E max) {
         System.out.println(max);
     }
 }
