@@ -10,7 +10,7 @@ public class MaximumNumber < E extends Comparable> {
     public MaximumNumber() {
     }
 
-    public < E extends Compxarable > E xkgetMaximum(E ...a) {
+    public < E extends Comparable > E getMaximum(E ...a) {
         Arrays.sort(a);
         return a[a.length-1];
     }
